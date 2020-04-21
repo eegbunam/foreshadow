@@ -1,0 +1,6 @@
+framework module Pods_foreshadow {
+  umbrella header "Pods-foreshadow-umbrella.h"
+
+  export *
+  module * { export * }
+}
