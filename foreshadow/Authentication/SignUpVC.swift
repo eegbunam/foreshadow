@@ -107,10 +107,15 @@ extension SignUpVC {
         
         FirebaseUser.sharedInstance.createUser(data: data, email: cleanEmail, password: passowrd) { [weak self] (error) in
             if let error = error{
+                self?.hideIndicator()
                 self?.displayAlert(title: "Error Creating User", message: error.localizedDescription)
                 return
             }
+            self?.hideIndicator()
             self?.displayAlert(title: "Success Creating User", message: "You are now a DJ on forshadow")
+            let vc = UIStoryboard(name: "DJStoryboard", bundle: nil).instantiateViewController(identifier: "DJTabbedViewController") as! DJTabbedViewController
+            vc.modalPresentationStyle = .fullScreen
+            self?.present(vc, animated: true, completion: nil)
             
         }
         

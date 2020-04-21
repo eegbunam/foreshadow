@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43884A44244F55E40014AFCF /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43884A43244F55E40014AFCF /* FirebaseUser.swift */; };
+		43884A46244F69B20014AFCF /* DJStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43884A45244F69B20014AFCF /* DJStoryboard.storyboard */; };
+		43884A48244F6A030014AFCF /* DJTabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43884A47244F6A030014AFCF /* DJTabbedViewController.swift */; };
 		43F7F298244E8CA500C0B3F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F297244E8CA500C0B3F7 /* AppDelegate.swift */; };
 		43F7F29A244E8CA500C0B3F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F299244E8CA500C0B3F7 /* SceneDelegate.swift */; };
 		43F7F29C244E8CA500C0B3F7 /* verifyUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F29B244E8CA500C0B3F7 /* verifyUserVC.swift */; };
@@ -31,6 +33,8 @@
 		136183B13DCF73E95D6B1E78 /* Pods_foreshadow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foreshadow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF8FDB2B3C6223A79558485 /* Pods-foreshadow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foreshadow.release.xcconfig"; path = "Target Support Files/Pods-foreshadow/Pods-foreshadow.release.xcconfig"; sourceTree = "<group>"; };
 		43884A43244F55E40014AFCF /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
+		43884A45244F69B20014AFCF /* DJStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DJStoryboard.storyboard; sourceTree = "<group>"; };
+		43884A47244F6A030014AFCF /* DJTabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJTabbedViewController.swift; sourceTree = "<group>"; };
 		43F7F294244E8CA500C0B3F7 /* foreshadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foreshadow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F7F297244E8CA500C0B3F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F7F299244E8CA500C0B3F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 		43F7F2B8244E9DDE00C0B3F7 /* DJ */ = {
 			isa = PBXGroup;
 			children = (
+				43884A45244F69B20014AFCF /* DJStoryboard.storyboard */,
+				43884A47244F6A030014AFCF /* DJTabbedViewController.swift */,
 			);
 			path = DJ;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 				43F7F2B0244E90C400C0B3F7 /* UserTabbedStoryboard.storyboard in Resources */,
 				43F7F2BA244E9E2500C0B3F7 /* AuthStoryboard.storyboard in Resources */,
 				43F7F2A4244E8CA900C0B3F7 /* LaunchScreen.storyboard in Resources */,
+				43884A46244F69B20014AFCF /* DJStoryboard.storyboard in Resources */,
 				43F7F2A1244E8CA900C0B3F7 /* Assets.xcassets in Resources */,
 				43F7F29F244E8CA500C0B3F7 /* Main.storyboard in Resources */,
 				43F7F2C3244EB47700C0B3F7 /* GoogleService-Info.plist in Resources */,
@@ -288,6 +295,7 @@
 				43F7F2BC244EA18400C0B3F7 /* LoginVC.swift in Sources */,
 				43F7F2B2244E920000C0B3F7 /* UserTabbedVC.swift in Sources */,
 				43F7F298244E8CA500C0B3F7 /* AppDelegate.swift in Sources */,
+				43884A48244F6A030014AFCF /* DJTabbedViewController.swift in Sources */,
 				43F7F2AD244E8D1800C0B3F7 /* AuthVC.swift in Sources */,
 				43F7F29A244E8CA500C0B3F7 /* SceneDelegate.swift in Sources */,
 				43F7F2C1244EA62B00C0B3F7 /* Utilities.swift in Sources */,
