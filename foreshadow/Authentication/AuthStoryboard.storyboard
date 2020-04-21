@@ -132,6 +132,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                         <state key="normal" title="SignUp"/>
+                                        <connections>
+                                            <action selector="signUpBtn:" destination="e8d-Bm-2jk" eventType="touchUpInside" id="Xhc-hJ-2ru"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWp-Nu-dwC">
                                         <rect key="frame" x="0.0" y="450" width="394" height="60"/>
@@ -229,6 +232,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginBtn:" destination="oGg-Yb-eTS" eventType="touchUpInside" id="wZT-oW-0es"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEZ-a2-U3C">
                                         <rect key="frame" x="0.0" y="249" width="394" height="55"/>

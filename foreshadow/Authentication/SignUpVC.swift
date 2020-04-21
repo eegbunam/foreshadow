@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ANActivityIndicator
 
 class SignUpVC: UIViewController {
     
@@ -29,6 +30,12 @@ class SignUpVC: UIViewController {
     @IBAction func usertypeBtn(_ sender: Any) {
         handleUserType()
        }
+    
+    @IBAction func signUpBtn(_ sender: Any) {
+        signUp()
+    }
+    
+    
        
 
 }
@@ -50,5 +57,64 @@ extension SignUpVC {
            view.window?.makeKeyAndVisible()
            
        }
+    
+    
+    
+       func displayAlert(title: String, message: String) {
+           // this function diplays a generec alertviewcontroller with a message
+           let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "Restart demo", style: .cancel))
+           self.present(alert, animated: true, completion: nil)
+           
+       }
+    
+    func validateFields() -> String?{
+        if username.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            firstname.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastname.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastname.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+            
+        {
+            return "Please fill in all fields."
+        }else{
+            //validate password and email is correct
+            return nil
+        }
+    }
+    
+    func signUp(){
+        showIndicator(message: "Signing Up ...", animationType: .ballClipRotate)
+        let error = validateFields()
+        if error != nil{
+            self.hideIndicator()
+            displayAlert(title: "Missing Information", message: "Fill in all the textfields")
+            return
+        }
+        
+        let userName = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let firstName = firstname!.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lastName = lastname!.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let  passowrd = password!.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanEmail = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let data : [String:String] =
+            [ "username" : userName,
+              "firstname":firstName,
+              "lastname" : lastName,
+              "email" : cleanEmail
+        ]
+        
+        FirebaseUser.sharedInstance.createUser(data: data, email: cleanEmail, password: passowrd) { [weak self] (error) in
+            if let error = error{
+                self?.displayAlert(title: "Error Creating User", message: error.localizedDescription)
+                return
+            }
+            self?.displayAlert(title: "Success Creating User", message: "You are now a DJ on forshadow")
+            
+        }
+        
+    }
+       
        
 }

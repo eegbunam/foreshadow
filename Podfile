@@ -7,6 +7,11 @@ target 'foreshadow' do
 
   # Pods for foreshadow
     pod 'Firebase'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
+    pod 'Firebase/Firestore'
+    pod 'Firebase/Storage'
+    pod 'ANActivityIndicator'
 
 
 end

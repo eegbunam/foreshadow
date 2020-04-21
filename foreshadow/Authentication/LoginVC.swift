@@ -29,6 +29,11 @@ class LoginVC: UIViewController {
     @IBAction func userTypeBtn(_ sender: Any) {
         handleUserType()
        }
+    
+    @IBAction func loginBtn(_ sender: Any) {
+        displayAlert(title: "test", message: "testing...")
+    }
+    
 
 }
 
@@ -46,5 +51,12 @@ extension LoginVC{
            view.window?.makeKeyAndVisible()
            
        }
+    func displayAlert(title: String, message: String) {
+             // this function diplays a generec alertviewcontroller with a message
+             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Restart demo", style: .cancel))
+             self.present(alert, animated: true, completion: nil)
+             
+         }
        
 }

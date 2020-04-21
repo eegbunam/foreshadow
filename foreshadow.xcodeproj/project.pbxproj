@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43884A44244F55E40014AFCF /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43884A43244F55E40014AFCF /* FirebaseUser.swift */; };
 		43F7F298244E8CA500C0B3F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F297244E8CA500C0B3F7 /* AppDelegate.swift */; };
 		43F7F29A244E8CA500C0B3F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F299244E8CA500C0B3F7 /* SceneDelegate.swift */; };
 		43F7F29C244E8CA500C0B3F7 /* verifyUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F29B244E8CA500C0B3F7 /* verifyUserVC.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		136183B13DCF73E95D6B1E78 /* Pods_foreshadow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foreshadow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF8FDB2B3C6223A79558485 /* Pods-foreshadow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foreshadow.release.xcconfig"; path = "Target Support Files/Pods-foreshadow/Pods-foreshadow.release.xcconfig"; sourceTree = "<group>"; };
+		43884A43244F55E40014AFCF /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		43F7F294244E8CA500C0B3F7 /* foreshadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foreshadow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F7F297244E8CA500C0B3F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F7F299244E8CA500C0B3F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				43F7F2BB244EA18400C0B3F7 /* LoginVC.swift */,
 				43F7F2BD244EA19300C0B3F7 /* SignUpVC.swift */,
 				43F7F2B9244E9E2500C0B3F7 /* AuthStoryboard.storyboard */,
+				43884A43244F55E40014AFCF /* FirebaseUser.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -158,7 +161,6 @@
 				D445B9426BC96F26B150DAC0 /* Pods-foreshadow.debug.xcconfig */,
 				3AF8FDB2B3C6223A79558485 /* Pods-foreshadow.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -290,6 +292,7 @@
 				43F7F29A244E8CA500C0B3F7 /* SceneDelegate.swift in Sources */,
 				43F7F2C1244EA62B00C0B3F7 /* Utilities.swift in Sources */,
 				43F7F2B4244E986F00C0B3F7 /* UserProfileVC.swift in Sources */,
+				43884A44244F55E40014AFCF /* FirebaseUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
