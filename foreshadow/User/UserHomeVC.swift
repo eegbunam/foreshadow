@@ -16,6 +16,7 @@ class UserHomeVC: UIViewController {
     let identifier = "cell"
     var originalY : CGFloat = 0
     var djList = [Dj]()
+    let id = "cell"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,16 +26,21 @@ class UserHomeVC: UIViewController {
         search(shouldShow: false)
         setupTableView()
         setupDjTable()
-       
-         djList = FirebaseUser.sharedInstance.searchForDJ(name: "e")
+        
         print(djList)
         // Do any additional setup after loading the view.
     }
     
+    func animatedjtableHeight(){
+        UIView.animate(withDuration: 0.3) {
+            self.djtable.frame = CGRect(x: self.djtable.frame.origin.x, y: self.djtable.frame.origin.y, width: self.djtable.frame.size.width, height: self.djtable.contentSize.height)
+        }
+    }
     
     func setupDjTable(){
         djtable.dataSource = self
         djtable.delegate = self
+        djtable.register(UsernameCell.self, forCellReuseIdentifier: id)
         setupDjTableView()
         
     }
@@ -47,22 +53,22 @@ class UserHomeVC: UIViewController {
             }
             
         }
-
+        
         
     }
     
     func animatedjtable(status : Bool){
-       
+        
         
         if status{
-             songsTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeView)))
+            songsTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeView)))
             
             UIView.animate(withDuration: 0.3) { [weak self] in
-        
-                    if let self = self{
-                        self.djtable.frame.origin.y = self.songsTable.frame.origin.y + 40
-                    }
-                    
+                
+                if let self = self{
+                    self.djtable.frame.origin.y = self.songsTable.frame.origin.y + 40
+                }
+                
                 
             }
             
@@ -82,7 +88,8 @@ class UserHomeVC: UIViewController {
         djtable.frame = CGRect(x: 10, y: self.view.frame.height, width: self.view.frame.width - 20, height: self.view.frame.height/2)
         djtable.layer.cornerRadius = 7
         self.view.addSubview(djtable)
-          originalY = djtable.frame.origin.y
+        originalY = djtable.frame.origin.y
+        djtable.rowHeight = 50
         
     }
     
@@ -132,11 +139,24 @@ extension UserHomeVC :  UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search(shouldShow: false)
-         animatedjtable(status: false)
+        animatedjtable(status: false)
         
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        FirebaseUser.sharedInstance.searchForDJ(name: searchText.lowercased()
+        ) { (djs) in
+            guard let djs = djs else {return}
+            self.djList = djs
+            self.djtable.reloadData()
+            DispatchQueue.main.async {
+                self.djtable.reloadData()
+                if self.djList.count > 3{
+                    self.animatedjtableHeight()
+                }
+                
+            }
+        }
         
         
     }
@@ -145,21 +165,84 @@ extension UserHomeVC :  UISearchBarDelegate{
 
 extension UserHomeVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? SearchCell {
-            return cell
+        if tableView == djtable{
             
-        }else{
-            let cell = UITableViewCell()
-            cell.backgroundColor = .red
-            return UITableViewCell()
+            if djList.isEmpty{
+                return 1
+            }else{
+                return djList.count
+            }
+            
+        }else if tableView == songsTable{
+            return 5
+        }
+        else{
+            return 5
         }
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
+        if tableView == djtable{
+            if djList.isEmpty{
+                return UITableViewCell()
+            }else{
+                
+                if let cell = tableView.dequeueReusableCell(withIdentifier: id ) as? UsernameCell {
+                    cell.setupLabels(data: djList[indexPath.row])
+                    return cell
+                    
+                }else{
+                    let cell = UITableViewCell()
+                    cell.textLabel?.text = djList[indexPath.row].username
+                    return cell
+                }
+                
+            }
+            
+            
+        }else if tableView == songsTable{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? SearchCell {
+                cell.profileImageView.layer.cornerRadius = 7
+                cell.postView.layer.cornerRadius = 7
+                return cell
+                
+            }else{
+                let cell = UITableViewCell()
+                cell.backgroundColor = .red
+                return UITableViewCell()
+            }
+            
+        }
+        else{
+            let cell = UITableViewCell()
+            cell.backgroundColor = .red
+            return cell
+        }
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if tableView == djtable{
+            let view = UIView()
+            
+            return  view
+        }else{
+            return UIView()
+        }
+        
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+         if tableView == djtable{
+            return 30
+         }else{
+            return 50
+        }
+        
+    }
     
     
     

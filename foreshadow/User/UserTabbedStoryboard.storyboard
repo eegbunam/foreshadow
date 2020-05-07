@@ -185,7 +185,12 @@
                                                 <constraint firstItem="TNa-IR-XBL" firstAttribute="top" secondItem="7SG-oX-hFk" secondAttribute="topMargin" constant="15" id="rfe-nY-rHC"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="isLiveLabel" destination="z0K-4Y-emi" id="SkV-tj-u7G"/>
+                                            <outlet property="postView" destination="TIl-dH-sOh" id="2w7-xj-SK3"/>
+                                            <outlet property="profileImageView" destination="TJO-S6-4uT" id="mpa-ak-KOa"/>
+                                            <outlet property="usernameLabel" destination="tfb-ev-Wlb" id="xOw-NA-k9J"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

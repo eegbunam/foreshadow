@@ -11,10 +11,19 @@ import UIKit
 
 class SearchCell: UITableViewCell {
     
-    @IBOutlet weak var sogname: UILabel!
-    @IBOutlet weak var albumname: UILabel!
-    @IBOutlet weak var artistname: UILabel!
-    @IBOutlet weak var genrename: UILabel!
+
+    @IBOutlet weak var profileImageView: UIView!
+    
+    
+    @IBOutlet weak var postView: UIView!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var isLiveLabel: UILabel!
+    
+    
+   
+    
     
 }
 

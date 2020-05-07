@@ -17,7 +17,7 @@ class FirebaseUser {
     static let sharedInstance = FirebaseUser()
     
     var users  = Firestore.firestore().collection("users")
-    var djlist : [Dj] = []
+    private var djlist : [Dj] = []
     
     
     var userIsSigned : Bool = false
@@ -62,7 +62,7 @@ class FirebaseUser {
     }
     
     
-    func searchfordjOneLetter (name : String , completion : @escaping (_ dj: [Dj]?)-> ()){
+    private func searchfordjOneLetter (name : String , completion : @escaping (_ dj: [Dj]?)-> ()){
         var djs = [Dj]()
         let query = users.whereField("username", isGreaterThanOrEqualTo: name)
         query.getDocuments { (snapshot, error) in
@@ -77,7 +77,6 @@ class FirebaseUser {
                 return
                 
             }
-            print(snapshot.documents.count)
             for document in snapshot.documents{
                 let data = document.data() as [String : Any]
                 let username = data["username"] as! String
@@ -86,7 +85,7 @@ class FirebaseUser {
                 let userid = data["userid"] as! String
                 let firstname = data["firstname"] as! String
                 
-                let sinlgeDj = Dj(firstname: firstname, userid: userid, lastname: lastname, username: username, email: email)
+                let sinlgeDj = Dj(firstname: firstname, userid: userid, lastname: lastname, username: username.lowercased(), email: email)
                 djs.append(sinlgeDj)
                 
                 
@@ -101,29 +100,47 @@ class FirebaseUser {
     
     
     
-    func searchForDJ(name : String) -> [Dj]{
-        
+    func searchForDJ(name : String , completion : @escaping (_ dj: [Dj]?)-> ()) {
         if name.count == 1 {
-            searchfordjOneLetter(name: name) {  [weak self] (djs)   in
+            searchfordjOneLetter(name: name.lowercased()) {  [weak self] (djs)   in
                 if let djs = djs {
                     self?.djlist = djs
+                    completion(self?.djlist)
+                    return
+                }else{
+                    completion(nil)
+                    return
                 }
             }
             
-            return djlist
         }else{
             //search for all the name wiht first letter still and update array
-            searchfordjOneLetter(name: String(name[name.startIndex])) { [weak self] (djs) in
-                if let djs = djs{
-                    self?.djlist = djs
+            
+            if name.count > 1 {
+                let finalname = name.lowercased()
+                searchfordjOneLetter(name: String(finalname[finalname.startIndex])) { [weak self] (djs) in
+                    if let djs = djs{
+                        self?.djlist = djs
+                        let finaldjList = self?.djlist.filter { (dj) -> Bool in
+                            return dj.username.contains(name)
+                            
+                            
+                        }
+                        completion(finaldjList)
+                        return
+                        
+                    }else{
+                        completion(nil)
+                        return
+                    }
                 }
-            }
-            let  finaldjList = djlist.filter { (dj) -> Bool in
-                return dj.username.contains(name)
+                
             }
             
             
-            return finaldjList
+            
+            
+            
             
         }
         
