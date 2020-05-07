@@ -10,6 +10,10 @@
 		43884A44244F55E40014AFCF /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43884A43244F55E40014AFCF /* FirebaseUser.swift */; };
 		43884A46244F69B20014AFCF /* DJStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43884A45244F69B20014AFCF /* DJStoryboard.storyboard */; };
 		43884A48244F6A030014AFCF /* DJTabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43884A47244F6A030014AFCF /* DJTabbedViewController.swift */; };
+		43B7CBD3245BA7E7000B4C41 /* MusicServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7CBD2245BA7E7000B4C41 /* MusicServices.swift */; };
+		43B7CBD6245D199D000B4C41 /* UserHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7CBD5245D199D000B4C41 /* UserHomeVC.swift */; };
+		43B7CBD8245D22CA000B4C41 /* searchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7CBD7245D22CA000B4C41 /* searchCell.swift */; };
+		43B7CBDA24634302000B4C41 /* Dj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7CBD924634302000B4C41 /* Dj.swift */; };
 		43F7F298244E8CA500C0B3F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F297244E8CA500C0B3F7 /* AppDelegate.swift */; };
 		43F7F29A244E8CA500C0B3F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F299244E8CA500C0B3F7 /* SceneDelegate.swift */; };
 		43F7F29C244E8CA500C0B3F7 /* verifyUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F29B244E8CA500C0B3F7 /* verifyUserVC.swift */; };
@@ -19,7 +23,7 @@
 		43F7F2AD244E8D1800C0B3F7 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F2AC244E8D1800C0B3F7 /* AuthVC.swift */; };
 		43F7F2B0244E90C400C0B3F7 /* UserTabbedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F7F2AF244E90C400C0B3F7 /* UserTabbedStoryboard.storyboard */; };
 		43F7F2B2244E920000C0B3F7 /* UserTabbedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F2B1244E920000C0B3F7 /* UserTabbedVC.swift */; };
-		43F7F2B4244E986F00C0B3F7 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F2B3244E986F00C0B3F7 /* UserProfileVC.swift */; };
+		43F7F2B4244E986F00C0B3F7 /* UserSettingsProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F2B3244E986F00C0B3F7 /* UserSettingsProfileVC.swift */; };
 		43F7F2B7244E98E200C0B3F7 /* Buttons .swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F2B6244E98E200C0B3F7 /* Buttons .swift */; };
 		43F7F2BA244E9E2500C0B3F7 /* AuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F7F2B9244E9E2500C0B3F7 /* AuthStoryboard.storyboard */; };
 		43F7F2BC244EA18400C0B3F7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7F2BB244EA18400C0B3F7 /* LoginVC.swift */; };
@@ -32,9 +36,14 @@
 /* Begin PBXFileReference section */
 		136183B13DCF73E95D6B1E78 /* Pods_foreshadow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foreshadow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF8FDB2B3C6223A79558485 /* Pods-foreshadow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foreshadow.release.xcconfig"; path = "Target Support Files/Pods-foreshadow/Pods-foreshadow.release.xcconfig"; sourceTree = "<group>"; };
+		43483ED5245B8F13009BCDF6 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../Desktop/ios-sdk/SpotifyiOS.framework"; sourceTree = "<group>"; };
 		43884A43244F55E40014AFCF /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		43884A45244F69B20014AFCF /* DJStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DJStoryboard.storyboard; sourceTree = "<group>"; };
 		43884A47244F6A030014AFCF /* DJTabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJTabbedViewController.swift; sourceTree = "<group>"; };
+		43B7CBD2245BA7E7000B4C41 /* MusicServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServices.swift; sourceTree = "<group>"; };
+		43B7CBD5245D199D000B4C41 /* UserHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeVC.swift; sourceTree = "<group>"; };
+		43B7CBD7245D22CA000B4C41 /* searchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCell.swift; sourceTree = "<group>"; };
+		43B7CBD924634302000B4C41 /* Dj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dj.swift; sourceTree = "<group>"; };
 		43F7F294244E8CA500C0B3F7 /* foreshadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foreshadow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F7F297244E8CA500C0B3F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F7F299244E8CA500C0B3F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +55,7 @@
 		43F7F2AC244E8D1800C0B3F7 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		43F7F2AF244E90C400C0B3F7 /* UserTabbedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserTabbedStoryboard.storyboard; sourceTree = "<group>"; };
 		43F7F2B1244E920000C0B3F7 /* UserTabbedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabbedVC.swift; sourceTree = "<group>"; };
-		43F7F2B3244E986F00C0B3F7 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		43F7F2B3244E986F00C0B3F7 /* UserSettingsProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsProfileVC.swift; sourceTree = "<group>"; };
 		43F7F2B6244E98E200C0B3F7 /* Buttons .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buttons .swift"; sourceTree = "<group>"; };
 		43F7F2B9244E9E2500C0B3F7 /* AuthStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthStoryboard.storyboard; sourceTree = "<group>"; };
 		43F7F2BB244EA18400C0B3F7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -71,14 +80,24 @@
 		195574D07D5133EC5844F3DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43483ED5245B8F13009BCDF6 /* SpotifyiOS.framework */,
 				136183B13DCF73E95D6B1E78 /* Pods_foreshadow.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		43B7CBD1245BA7C5000B4C41 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				43B7CBD2245BA7E7000B4C41 /* MusicServices.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		43F7F28B244E8CA500C0B3F7 = {
 			isa = PBXGroup;
 			children = (
+				43B7CBD1245BA7C5000B4C41 /* Music */,
 				43F7F296244E8CA500C0B3F7 /* foreshadow */,
 				43F7F295244E8CA500C0B3F7 /* Products */,
 				D9914D4A018BAE59CADC4FFD /* Pods */,
@@ -122,6 +141,7 @@
 				43F7F2BD244EA19300C0B3F7 /* SignUpVC.swift */,
 				43F7F2B9244E9E2500C0B3F7 /* AuthStoryboard.storyboard */,
 				43884A43244F55E40014AFCF /* FirebaseUser.swift */,
+				43B7CBD924634302000B4C41 /* Dj.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -131,7 +151,9 @@
 			children = (
 				43F7F2AF244E90C400C0B3F7 /* UserTabbedStoryboard.storyboard */,
 				43F7F2B1244E920000C0B3F7 /* UserTabbedVC.swift */,
-				43F7F2B3244E986F00C0B3F7 /* UserProfileVC.swift */,
+				43F7F2B3244E986F00C0B3F7 /* UserSettingsProfileVC.swift */,
+				43B7CBD5245D199D000B4C41 /* UserHomeVC.swift */,
+				43B7CBD7245D22CA000B4C41 /* searchCell.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -290,6 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43F7F2B7244E98E200C0B3F7 /* Buttons .swift in Sources */,
+				43B7CBDA24634302000B4C41 /* Dj.swift in Sources */,
+				43B7CBD6245D199D000B4C41 /* UserHomeVC.swift in Sources */,
+				43B7CBD3245BA7E7000B4C41 /* MusicServices.swift in Sources */,
 				43F7F2BE244EA19300C0B3F7 /* SignUpVC.swift in Sources */,
 				43F7F29C244E8CA500C0B3F7 /* verifyUserVC.swift in Sources */,
 				43F7F2BC244EA18400C0B3F7 /* LoginVC.swift in Sources */,
@@ -298,8 +323,9 @@
 				43884A48244F6A030014AFCF /* DJTabbedViewController.swift in Sources */,
 				43F7F2AD244E8D1800C0B3F7 /* AuthVC.swift in Sources */,
 				43F7F29A244E8CA500C0B3F7 /* SceneDelegate.swift in Sources */,
+				43B7CBD8245D22CA000B4C41 /* searchCell.swift in Sources */,
 				43F7F2C1244EA62B00C0B3F7 /* Utilities.swift in Sources */,
-				43F7F2B4244E986F00C0B3F7 /* UserProfileVC.swift in Sources */,
+				43F7F2B4244E986F00C0B3F7 /* UserSettingsProfileVC.swift in Sources */,
 				43884A44244F55E40014AFCF /* FirebaseUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
